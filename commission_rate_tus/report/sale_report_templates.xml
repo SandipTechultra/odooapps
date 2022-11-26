@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table/thead/tr/th[@name='th_quantity']" position="after">
+            <th name="th_commission" class="text-right">Commission (%)</th>
+        </xpath>
+        <xpath expr="//td[@name='td_quantity']" position="after">
+            <td name="td_commission" class="text-right">
+                <span t-field="line.commission"/>
+            </td>
+        </xpath>
+        <xpath expr="//div[@name='total']" position="replace">
+            <div id="total" class="row" name="total">
+                <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                    <table class="table table-sm">
+                        <!-- Tax totals -->
+                        <t t-set="tax_totals" t-value="json.loads(doc.tax_totals_json)"/>
+                        <strong>Commission</strong>
+                        <span t-field="doc.total_commission" style="margin-right:7px; float:right"
+                              t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                        <t t-call="account.document_tax_totals"/>
+                    </table>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="sale_order_portal_content_inherit" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//table/thead/tr/th[2]" position="after">
+            <th class="text-right">Commission (%)</th>
+        </xpath>
+
+        <xpath expr="//div[2]/section/table/tbody/t[2]/tr/t/td[2]" position="after">
+            <td id="commission" class="text-right">
+                <span t-field="line.commission"/>
+            </td>
+        </xpath>
+    </template>
+
+    <template id="sale_order_portal_content_totals_table_inherit"
+              inherit_id="sale.sale_order_portal_content_totals_table">
+        <xpath expr="//table/t" position="after">
+            <strong>Commission</strong>
+            <span t-field="sale_order.total_commission" style="margin-left:160px;"
+                  t-options='{"widget": "monetary", "display_currency": sale_order.pricelist_id.currency_id}'/>
+        </xpath>
+    </template>
+</odoo>
