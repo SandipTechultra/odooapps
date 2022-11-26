@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_sale_order_form_inherits" model="ir.ui.view">
+            <field name="name">view.sale.order.form.inherits</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='order_line']/tree/field[@name='product_uom_qty']" position="after">
+                    <field name="commission"/>
+                </xpath>
+                <xpath expr="//group[@name='note_group']/group[hasclass('oe_subtotal_footer')]/field[@name='tax_totals_json']"
+                       position="before">
+                    <label for="total_commission" string="Commission" style="margin-right:70px;"
+                           />
+                    <field name="total_commission" class="oe_inline" widget='monetary'
+                           options="{'currency_id': 'company_currency'}" nolabel="1"
+                           />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

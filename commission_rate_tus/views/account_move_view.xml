@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_account_move_form_inherits" model="ir.ui.view">
+            <field name="name">view.account.move.form.inherits</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="after">
+                    <field name="commission"/>
+                </xpath>
+                <xpath expr="//field[@name='tax_totals_json']" position="before">
+                    <label for="total_commission" string="Commission" style="margin-right:48px;"/>
+                    <field name="total_commission" class="oe_inline" widget='monetary'
+                           options="{'currency_id': 'company_currency'}" nolabel="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
