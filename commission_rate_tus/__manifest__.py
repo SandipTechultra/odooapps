@@ -6,9 +6,9 @@
     'version': '15.0.0',
     'author': "TechUltra Solutions",
     'website': "https://www.techultrasolutions.com/",
-    'description': """ Sale Commission Rate and invoice line in add commission""",
-    'description': """ Sale Commission Rate""",
+    'description': """ Sale Commission Rate on Sale order line and invoice line and sale order report and invoice report.""",
     'icon': '/commission_rate_tus/static/description/logo.png',
+    'images': ['static/description/img.png'],
     'depends': ['sale_management', 'account'],
     'data': [
         'views/res_partner_view.xml',
