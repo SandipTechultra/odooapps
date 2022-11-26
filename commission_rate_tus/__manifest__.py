@@ -7,6 +7,7 @@
     'author': "TechUltra Solutions",
     'website': "https://www.techultrasolutions.com/",
     'description': """ Sale Commission Rate and invoice line in add commission""",
+    'description': """ Sale Commission Rate""",
     'icon': '/commission_rate_tus/static/description/logo.png',
     'depends': ['sale_management', 'account'],
     'data': [
