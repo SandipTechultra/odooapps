@@ -8,7 +8,7 @@
     'category': 'configuration',
     'depends': ['base'],
     'icon': 'hide_menu/static/description/hide_logo.png',
-    'images': ['static/description/hide_logo.png'],
+    'images': ['static/description/banner.png'],
     'data': ['security/ir.model.access.csv',
              'views/active_menu.xml'],
     'installable': True,
