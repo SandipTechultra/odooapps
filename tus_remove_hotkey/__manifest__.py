@@ -6,8 +6,6 @@
     'website': "www.techultrasolutions.com",
     'category': 'Hidden',
     'version': '16.0.1',
-    "price": 20,
-    "currency": "USD",
     'description': """
         Remove a hotkey by a specific user.
         **************************************************************************************************************
@@ -38,7 +36,7 @@
     'assets': {
             'web.assets_backend': ['tus_remove_hotkey/static/src/js/remove_hotkey.js'],
     },
-    'license': 'LGPL-3',
+    'license': 'OPL-1',
     'application': False,
     'images': ['static/description/banner.png'],
     'installable': True,
