@@ -2,7 +2,7 @@
     Import Packages, Class
 """
 from odoo.http import request
-from odoo import models
+from odoo import api, models
 
 
 class IrHttp(models.AbstractModel):

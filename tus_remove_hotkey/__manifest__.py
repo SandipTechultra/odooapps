@@ -5,7 +5,9 @@
     'author': "TechUltra Solutions",
     'website': "www.techultrasolutions.com",
     'category': 'Hidden',
-    'version': '12.0.1',
+    'version': '16.0.1',
+    "price": 20,
+    "currency": "USD",
     'description': """
         Remove a hotkey by a specific user.
         **************************************************************************************************************
@@ -31,8 +33,11 @@
     """,
     'depends': ['base', 'web'],
     'data': [
-        'view/assets.xml'
+        'data/assets.xml'
     ],
+    'assets': {
+            'web.assets_backend': ['tus_remove_hotkey/static/src/js/remove_hotkey.js'],
+    },
     'license': 'LGPL-3',
     'application': False,
     'images': ['static/description/banner.png'],
